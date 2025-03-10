@@ -12,12 +12,7 @@ pipeline {
                             ls -la
                             node --version
                             npm --version
-                            
-                            # Ensure clean dependencies
-                            rm -rf node_modules package-lock.json
-                            npm cache clean --force
-                            
-                            # Install dependencies
+                            npm run build
                             npm ci
                             
                             # Run the build
