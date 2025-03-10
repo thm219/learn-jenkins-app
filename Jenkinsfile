@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    #docker.image('node:18-alpine').inside('--user root') {
+                    ## docker.image('node:18-alpine').inside('--user root') {
                     docker.image('node:18-alpine').inside {
                         sh '''
                             echo 'Building inside Docker container...'
