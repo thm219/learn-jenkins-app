@@ -7,6 +7,7 @@ pipeline {
             steps {
                 script {
                     docker.image('node:18-alpine').inside('--user root') {
+                        reuseNode true
                         sh '''
                             echo 'Building inside Docker container...'
                             ls -la
