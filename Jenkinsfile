@@ -13,8 +13,8 @@ pipeline {
                             ls -la
                             node --version
                             npm --version
-                            npm ci
                             npm run build
+                            npm ci
                             ls -la
                             echo 'Finish to build inside Docker container...'
                         '''
