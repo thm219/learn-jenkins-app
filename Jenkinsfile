@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Run the build inside a Docker container
-                    docker.image('node:22.14.0-alpine3.21').inside {
+                    docker.image('node:18-alpine').inside {
                         sh '''
                             echo 'Building inside Docker container...'
                             ls -la
