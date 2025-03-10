@@ -10,6 +10,7 @@ pipeline {
                         sh '''
                             echo 'Building inside Docker container...'
                             ls -la
+                            whoami
                             node --version
                             npm --version
                             npm ci
