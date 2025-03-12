@@ -2,6 +2,7 @@ pipeline {
     agent {
         label 'agent-node01'  // Jenkins agent label
     }
+
     stages {
         stage('Build') {
             steps {
@@ -22,5 +23,18 @@ pipeline {
                 }
             }
         }
+
+        stage ('Test') {
+            steps {
+                script {
+                    sh '''
+                        echo 'Test Stage'
+                        pwd
+                        whoami
+                    '''   
+                }
+            }
+        }
     }
+
 }
