@@ -27,11 +27,17 @@ pipeline {
         stage ('Test') {
             steps {
                 script {
-                    sh '''
-                        echo 'Test Stage'
-                        pwd
-                        whoami
-                    '''   
+                    docker.image('node:18-alpine').inside('--user root') {
+                        sh '''
+                            echo 'Test inside Docker container...'
+                            ls -la
+                            whoami
+                            test -f build/index.html
+                            npm test
+                            ls -la
+                            echo 'Finished test stage inside Docker container...'
+                        '''
+                    } 
                 }
             }
         }
