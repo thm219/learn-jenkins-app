@@ -3,6 +3,7 @@ pipeline {
         label 'agent-node01'  // Jenkins agent label
     }
 
+    /*
     stages {
         stage('Build') {
             steps {
@@ -23,6 +24,7 @@ pipeline {
                 }
             }
         }
+    */
 
         stage ('Test') {
             steps {
@@ -31,7 +33,6 @@ pipeline {
                         sh '''
                             echo 'Test inside Docker container...'
                             ls -la
-                            whoami
                             test -f build/index.html
                             npm test
                             ls -la
