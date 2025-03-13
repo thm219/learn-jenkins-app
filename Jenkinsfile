@@ -3,8 +3,10 @@ pipeline {
         label 'agent-node01'  // Jenkins agent label
     }
 
-    /*
+    
     stages {
+    
+    /*
         stage('Build') {
             steps {
                 script {
@@ -24,8 +26,8 @@ pipeline {
                 }
             }
         }
-    }    
     */
+    
 
         stage ('Test') {
             steps {
@@ -43,4 +45,5 @@ pipeline {
                 }
             }
         }
- }
+    }    
+}
