@@ -24,6 +24,7 @@ pipeline {
                 }
             }
         }
+    }    
     */
 
         stage ('Test') {
@@ -42,6 +43,4 @@ pipeline {
                 }
             }
         }
-    }
-
-}
+ }
